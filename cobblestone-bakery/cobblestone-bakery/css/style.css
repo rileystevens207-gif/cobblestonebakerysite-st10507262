@@ -1,0 +1,122 @@
+/* ============================================
+   Cobblestone Bakery — Base Stylesheet
+   Part 1: light structural styling only.
+   Full visual design/CSS build-out happens in Part 2.
+   ============================================ */
+
+/* --- Colour palette (White & Brown only) ---
+   --white:        #FFFFFF   pure white, cards/background
+   --cream:        #FAF6F0   soft off-white, page background
+   --brown-dark:   #3B2417   deep espresso brown, headings/footer
+   --brown-mid:    #6F4A2E   crust brown, nav/buttons
+   --brown-light:  #B08968   warm caramel brown, borders/accents
+*/
+
+:root {
+  --white: #ffffff;
+  --cream: #faf6f0;
+  --brown-dark: #3b2417;
+  --brown-mid: #6f4a2e;
+  --brown-light: #b08968;
+}
+
+/* Basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  background-color: var(--cream);
+  color: var(--brown-dark);
+  line-height: 1.6;
+img{ max-width:100%; height:auto;}
+}
+
+/* Header & navigation */
+header {
+  background-color: var(--white);
+  border-bottom: 3px solid var(--brown-light);
+  padding: 1rem 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--brown-mid);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--brown-dark);
+  text-decoration: underline;
+}
+
+/* Main content areas */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--white);
+}
+
+h1, h2, h3 {
+  color: var(--brown-dark);
+  margin-bottom: 0.75rem;
+}
+
+/* Buttons / calls to action */
+.btn {
+  display: inline-block;
+  background-color: var(--brown-mid);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--brown-dark);
+}
+
+/* Simple form styling */
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--brown-light);
+  border-radius: 4px;
+  margin-top: 0.25rem;
+  font-family: inherit;
+}
+
+/* Footer */
+footer {
+  background-color: var(--brown-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: var(--cream);
+}
