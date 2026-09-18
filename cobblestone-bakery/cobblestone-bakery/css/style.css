@@ -32,21 +32,26 @@ body {
   background-color: var(--cream);
   color: var(--brown-dark);
   line-height: 1.6;
-img{ max-width:100%; height:auto;}
 }
 
-/* Header & navigation */
-header {
-  background-color: var(--white);
-  border-bottom: 3px solid var(--brown-light);
-  padding: 1rem 2rem;
+img {
+  max-width: 100%;
+  height: auto;
 }
+/* Header & navigation */
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+}header {
+  background-color: var(--white);
+  border-bottom: 3px solid var(--brown-light);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav a {
@@ -55,11 +60,18 @@ nav a {
   font-weight: bold;
 }
 
-nav a:hover,
-nav a:focus {
+nav a:hover {
   color: var(--brown-dark);
   text-decoration: underline;
 }
+
+nav a:focus {
+  color: var(--brown-dark);
+  text-decoration: underline;
+  outline: 2px solid var(--brown-light);
+  outline-offset: 4px;
+}
+
 
 /* Main content areas */
 main {
@@ -69,10 +81,41 @@ main {
   background-color: var(--white);
 }
 
+#hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+#hero img {
+  max-width: 600px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
 h1, h2, h3 {
+  font-family: "Playfair Display", Georgia, serif;
   color: var(--brown-dark);
   margin-bottom: 0.75rem;
 }
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
 
 /* Buttons / calls to action */
 .btn {
@@ -83,11 +126,22 @@ h1, h2, h3 {
   border: none;
   text-decoration: none;
   border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.btn:hover,
+.btn:hover {
+  background-color: var(--brown-dark);
+}
+
 .btn:focus {
   background-color: var(--brown-dark);
+  outline: 2px solid var(--brown-light);
+  outline-offset: 2px;
+}
+
+.btn:active {
+  background-color: var(--brown-dark);
+  transform: translateY(1px);
 }
 
 /* Simple form styling */
@@ -119,4 +173,25 @@ footer {
 
 footer a {
   color: var(--cream);
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
 }
